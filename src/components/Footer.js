@@ -1,11 +1,12 @@
-function Footer() {
-    return (
-      <header>
+import React from 'react';
 
-        <h1>Footer component</h1>
-      </header>
-    );
-  }
-  
+function Footer() {
+  return (
+    <header>
+      <h1>Footer component</h1>
+    </header>
+  );
+}
+
 export default Footer;
 
