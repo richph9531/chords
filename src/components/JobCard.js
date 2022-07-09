@@ -16,7 +16,7 @@ const jobCardObject = {
   randomJob,
 };
 
-function JobCard() {
+const JobCard = () => {
   const inputPlaceholder = 'Enter data';
   const inputDetailsTextBox = <input placeholder={ inputPlaceholder }/>;
 
@@ -33,6 +33,6 @@ function JobCard() {
     }
   </div>
   );
-}
+};
 
 export default JobCard;

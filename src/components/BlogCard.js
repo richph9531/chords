@@ -6,8 +6,7 @@ const blogEntry = {
   description: 'Some text to test the handling of the paragraph. Some text to test the handling of the paragraph. Some text to test the handling of the paragraph. Some text to test the handling of the paragraph. Some text to test the handling of the paragraph.',
 };
 
-function BlogCardsFunction() {
-  return (
+const BlogCardsFunction = () => (
     <div className='BlogCards'>
       <div className='BlogCard'>
         <h3>{ blogEntry.title }1</h3>
@@ -22,8 +21,7 @@ function BlogCardsFunction() {
         <p>{ blogEntry.description }</p>
       </div>
     </div>
-  );
-}
+);
 
 export default BlogCardsFunction;
 
