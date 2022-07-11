@@ -7,8 +7,13 @@ module.exports = {
     describe: false,
     jest: false,
   },
-  parser: '@babel/eslint-parser',
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   parserOptions: {
+    parser: '@babel/eslint-parser',
     requireConfigFile: false,
     sourceType: 'module',
   },
