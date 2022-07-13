@@ -1,0 +1,11 @@
+.JobCard {
+  font-family:'Courier New', Courier, monospace;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #72b6d7;
+  box-shadow: 0 5px 8px #1c3c4d;
+  box-sizing: border-box;
+  color: #ffffff;
+  text-align: left;
+};

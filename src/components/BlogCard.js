@@ -1,37 +1,19 @@
 import React from 'react';
-import '../App.css';
+import PropTypes from 'prop-types';
+import '../styles/BlogCard.css';
 
-const blogEntry = {
-  title: 'Blog ',
-  description: 'Some text to test the handling of the paragraph. Some text to test the handling of the paragraph. Some text to test the handling of the paragraph. Some text to test the handling of the paragraph. Some text to test the handling of the paragraph.',
-};
-
-const BlogCardsFunction = () => (
-    <div className='BlogCards'>
-      <div className='BlogCard'>
-        <h3>{ blogEntry.title }1</h3>
-        <p>{ blogEntry.description }</p>
-      </div>
-      <div className='BlogCard'>
-        <h3>{ blogEntry.title }2</h3>
-        <p>{ blogEntry.description }</p>
-      </div>
-      <div className='BlogCard'>
-        <h3>{ blogEntry.title }3</h3>
-        <p>{ blogEntry.description }</p>
-      </div>
-    </div>
+const BlogCard = props => (
+  <div className='BlogCard'>
+    <h3>{props.title}</h3>
+    <p>{props.description}</p>
+    <p>{props.id}</p>
+  </div>
 );
 
-export default BlogCardsFunction;
+BlogCard.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  id: PropTypes.number,
+};
 
-/*
-<div data-tag='div-data-tag' another-tag='another-div-tag'>
-  <h1 data-tag='h1-data-tag' another-tag='another-h1-tag'>
-  Heading
-  </h1>
-  <p data-tag='p-data-tag' another-tag='another-p-tag'>
-  Paragraph
-  </p>
-</div>
-*/
+export default BlogCard;

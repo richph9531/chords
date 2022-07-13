@@ -1,9 +1,10 @@
 import React from 'react';
+import '../styles/Header.css';
 
 const Header = () => (
-    <header>
+    <div className='Header'>
       <h1>Header component</h1>
-    </header>
+    </div>
 );
 
 export default Header;

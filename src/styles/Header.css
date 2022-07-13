@@ -1,0 +1,11 @@
+.Header {
+  font-family:'Courier New', Courier, monospace;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #57b1de;
+  box-shadow: 0 5px 8px #1c3c4d;
+  box-sizing: border-box;
+  color: #ffffff;
+  text-align: left;
+};
