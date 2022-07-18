@@ -2,8 +2,9 @@ import React from 'react';
 import BlogCard from './BlogCard';
 
 import blogEntriesArray from '../data/blogCardData.json';
+import { isArrayEmpty } from '../helpers/Utils';
 
-const BlogCards = blogEntriesArray.map(item => (
+const BlogCards = isArrayEmpty(blogEntriesArray) ? [] : blogEntriesArray.map(item => (
     <BlogCard
       key={item.id}
       title={item.title}
