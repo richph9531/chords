@@ -1,6 +1,6 @@
 module.exports = {
   plugins: ['jest'],
-  extends: ['eslint-config-airbnb/base', 'plugin:react/recommended'],
+  extends: ['eslint-config-airbnb/base', 'plugin:react/recommended', 'plugin:storybook/recommended'],
   globals: {
     expect: false,
     test: false,
