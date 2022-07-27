@@ -1,40 +1,23 @@
 import React from 'react';
+import BlogCard from '../components/BlogCard';
 
-import BlogCard from './BlogCard';
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: 'Components/Blogcard',
   component: BlogCard,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 };
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = args => <BlogCard {...args} />;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
+export const Standard = Template.bind({});
+Standard.args = {
+  title: 'Standard title',
+  description: 'Standard description',
+  id: 1,
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const LongDescription = Template.bind({});
+LongDescription.args = {
+  title: 'Long description title',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit pulvinar rhoncus. Nam non facilisis turpis. Sed vel est at nunc dapibus vehicula nec nec nisl. Sed sollicitudin viverra nunc, ut molestie dolor commodo sit amet. Proin rhoncus pretium felis, vitae pellentesque nibh lacinia vitae. Nam interdum erat id ultrices tincidunt. Morbi vitae ornare quam. In lacinia ligula sit amet vehicula maximus. Vivamus eget ligula fringilla est rutrum maximus. Etiam cursus porttitor velit, nec varius velit cursus non. Etiam semper neque a finibus porttitor. Proin sed rhoncus tortor, quis posuere mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce lobortis id mauris eget blandit. In id nunc ut velit ultrices scelerisque non eu quam. Nulla bibendum laoreet dignissim.',
+  id: 1234567890,
 };
