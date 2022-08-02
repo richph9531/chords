@@ -10,9 +10,7 @@ function isArrayEmpty(array) {
 }
 
 class App extends Component {
-  state = {
-    showBlogs: true,
-  };
+  state = { showBlogs: true };
 
   BlogCards = isArrayEmpty(blogEntriesArray) ? [] : blogEntriesArray.map(item => (
     <BlogCard
@@ -25,14 +23,19 @@ class App extends Component {
   ));
 
   doSomethingOnClick = () => {
-    this.setState({ showBlogs: false });
-    console.log(this.showBlogs);
+    this.setState((previousState) => {
+      console.log('');
+      return { showBlogs: !previousState.showBlogs };
+    });
   };
 
   render() {
+    console.log('render method called');
     return (
     <div className='App'>
-        <button onClick={this.doSomethingOnClick}>Hide List</button>
+        <button onClick={this.doSomethingOnClick}>
+         { this.state.showBlogs ? 'Hide List' : 'Show List' }
+        </button>
         { this.state.showBlogs ? this.BlogCards : null }
         <br></br>
     </div>

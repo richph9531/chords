@@ -14,4 +14,3 @@ const BlogCards = isArrayEmpty(blogEntriesArray) ? [] : blogEntriesArray.map(ite
 ));
 
 export default BlogCards;
-
