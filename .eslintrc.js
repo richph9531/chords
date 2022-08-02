@@ -12,8 +12,8 @@ module.exports = {
       version: 'detect',
     },
   },
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    parser: '@babel/eslint-parser',
     requireConfigFile: false,
     sourceType: 'module',
   },

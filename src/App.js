@@ -23,10 +23,7 @@ class App extends Component {
   ));
 
   doSomethingOnClick = () => {
-    this.setState((previousState) => {
-      console.log('');
-      return { showBlogs: !previousState.showBlogs };
-    });
+    this.setState(previousState => ({ showBlogs: !previousState.showBlogs }));
   };
 
   render() {
