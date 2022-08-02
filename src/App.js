@@ -12,25 +12,31 @@ function isArrayEmpty(array) {
 class App extends Component {
   state = { showBlogs: true };
 
+  // eslint-disable-next-line class-methods-use-this
+  onLikeButtonClick = () => {
+    alert('ALERT');
+  };
+
+  onShowHideButtonClick = () => {
+    this.setState(previousState => ({ showBlogs: !previousState.showBlogs }));
+  };
+
   BlogCards = isArrayEmpty(blogEntriesArray) ? [] : blogEntriesArray.map(item => (
     <BlogCard
       key={item.id}
-      title={item.title
-      }
+      title={item.title}
       description={item.description}
       id={item.id}
+      likeCount={item.likeCount}
+      onLikeButtonClick={this.onLikeButtonClick}
     />
   ));
-
-  doSomethingOnClick = () => {
-    this.setState(previousState => ({ showBlogs: !previousState.showBlogs }));
-  };
 
   render() {
     console.log('render method called');
     return (
     <div className='App'>
-        <button onClick={this.doSomethingOnClick}>
+        <button onClick={this.onShowHideButtonClick}>
          { this.state.showBlogs ? 'Hide List' : 'Show List' }
         </button>
         { this.state.showBlogs ? this.BlogCards : null }

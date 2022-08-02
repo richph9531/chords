@@ -1,5 +1,5 @@
 .BlogCard {
-  font-family:'Courier New', Courier, monospace;
+  font-family:'Courier New', Courier;
   margin: 16px;
   padding: 16px;
   border-radius: 10px;
@@ -8,4 +8,5 @@
   box-sizing: border-box;
   color: #ffffff;
   text-align: left;
+  font-weight: 500;
 };
