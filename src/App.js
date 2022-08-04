@@ -2,44 +2,45 @@ import React, { Component } from 'react';
 
 import blogEntriesArray from './data/blogCardData.json';
 import BlogCard from './components/BlogCard';
-
-function isArrayEmpty(array) {
-  if (array !== undefined && array !== null && array.length > 0) {
-    return false;
-  } return true;
-}
+import isArrayEmpty from './helpers/Utils';
 
 class App extends Component {
-  state = { showBlogs: true };
+  state = {
+    showBlogs: true,
+    blogEntriesArray,
+  };
 
-  // eslint-disable-next-line class-methods-use-this
-  onLikeButtonClick = () => {
-    alert('ALERT');
+  onLikeButtonClick = pos => {
+    const updatedBlogList = this.state.blogEntriesArray;
+    const updatedBlogObject = updatedBlogList[pos];
+    updatedBlogObject.likeCount += 1;
+    updatedBlogList[pos] = updatedBlogObject;
+    this.setState({ blogEntriesArray: updatedBlogList });
   };
 
   onShowHideButtonClick = () => {
     this.setState(previousState => ({ showBlogs: !previousState.showBlogs }));
   };
 
-  BlogCards = isArrayEmpty(blogEntriesArray) ? [] : blogEntriesArray.map(item => (
+  render() {
+    // eslint-disable-next-line max-len
+    const BlogCards = isArrayEmpty(this.state.blogEntriesArray) ? [] : this.state.blogEntriesArray.map((item, pos) => (
     <BlogCard
       key={item.id}
       title={item.title}
       description={item.description}
       id={item.id}
       likeCount={item.likeCount}
-      onLikeButtonClick={this.onLikeButtonClick}
+      onLikeButtonClick={() => this.onLikeButtonClick(pos)}
     />
-  ));
+    ));
 
-  render() {
-    console.log('render method called');
     return (
     <div className='App'>
         <button onClick={this.onShowHideButtonClick}>
          { this.state.showBlogs ? 'Hide List' : 'Show List' }
         </button>
-        { this.state.showBlogs ? this.BlogCards : null }
+        { this.state.showBlogs ? BlogCards : null }
         <br></br>
     </div>
     );

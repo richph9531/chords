@@ -16,7 +16,7 @@ BlogCard.propTypes = {
   description: PropTypes.string,
   id: PropTypes.number,
   likeCount: PropTypes.number,
-  onLikeButtonClick: PropTypes.number,
+  onLikeButtonClick: PropTypes.func,
 };
 
 export default BlogCard;
